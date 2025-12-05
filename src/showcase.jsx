@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, ExternalLink, Eye, Smartphone, Monitor, ChevronRight, Search, MapPin, Layout, Coffee, Stethoscope, GraduationCap, Building2, ShoppingBag, ArrowRight, Star, Menu, Instagram, Facebook, Twitter, ArrowDown, CheckCircle, Play, Clock, Map, Phone, Shield, Activity, Calendar, User, Mail, BookOpen, Video, Award, Users, Heart, HelpCircle, Car, Wifi, Zap, CreditCard, MonitorPlay } from 'lucide-react';
+import { X, ExternalLink, Eye, Smartphone, Monitor, ChevronRight, Search, MapPin, Layout, Coffee, Stethoscope, GraduationCap, Building2, ShoppingBag, ArrowRight, Star, Menu, Instagram, Facebook, Twitter, ArrowDown, CheckCircle, Play, Clock, Map, Phone, Shield, Activity, Calendar, User, Mail, BookOpen, Video, Award, Users, Heart, HelpCircle, Car, Wifi, Zap, CreditCard, MonitorPlay, Plane, Briefcase, Globe } from 'lucide-react';
+import TravelDeskStudio from './TravelDeskStudio';
 
 // --- Mock Data for Portfolio ---
 const PORTFOLIO_ITEMS = [
@@ -57,11 +58,21 @@ const PORTFOLIO_ITEMS = [
     id: 6,
     title: "TechSpace Coworking",
     category: "Real Estate",
-    templateType: "tech", 
+    templateType: "tech",
     location: "Cyber City, Gurgaon",
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     description: "Modern booking platform for coworking spaces. Calendar integration for meeting rooms and membership management dashboard.",
     tags: ["Booking System", "Membership", "Modern UI"],
+  },
+  {
+    id: 7,
+    title: "TravelDesk Studio – By Confroom Hospitality",
+    category: "Corporate Travel",
+    templateType: "traveldesk",
+    location: "Aerocity, Delhi",
+    image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    description: "B2B corporate travel management platform. Streamlined booking, expense tracking, and 24/7 support for business travelers.",
+    tags: ["B2B Portal", "Travel Management", "Corporate Solutions"],
   }
 ];
 
@@ -72,6 +83,7 @@ const CATEGORIES = [
   { id: 'Healthcare', label: 'Healthcare', icon: Stethoscope },
   { id: 'Education', label: 'Education', icon: GraduationCap },
   { id: 'E-Commerce', label: 'E-Commerce', icon: ShoppingBag },
+  { id: 'Corporate Travel', label: 'Corporate Travel', icon: Plane },
 ];
 
 // --- UTILITIES ---
@@ -1669,6 +1681,7 @@ const App = () => {
           {activePreviewProject.templateType === 'trust' && <TrustTemplate project={activePreviewProject} />}
           {activePreviewProject.templateType === 'education' && <EducationTemplate project={activePreviewProject} />}
           {activePreviewProject.templateType === 'tech' && <TechTemplate project={activePreviewProject} />}
+          {activePreviewProject.templateType === 'traveldesk' && <TravelDeskStudio project={activePreviewProject} />}
         </div>
       </div>
     );
