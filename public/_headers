@@ -1,0 +1,20 @@
+# Security headers
+X-Frame-Options: DENY
+X-Content-Type-Options: nosniff
+Referrer-Policy: strict-origin-when-cross-origin
+Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# Cache control
+Cache-Control: no-cache
+Cache-Control: no-store
+Cache-Control: must-revalidate
+Cache-Control: max-age=0
+
+# Enable compression
+Brotli: on
+Gzip: on
+
+# Security
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
