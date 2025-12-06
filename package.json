@@ -5,7 +5,9 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build",
+        "build": "NODE_OPTIONS=--max-old-space-size=8192 vite build",
+        "build:netlify": "NODE_OPTIONS=--max-old-space-size=8192 vite build",
+        "build:vercel": "vite build",
         "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
         "preview": "vite preview"
     },
